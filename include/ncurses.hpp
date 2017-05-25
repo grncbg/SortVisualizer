@@ -42,6 +42,7 @@ namespace kogcoder{
 		template <typename ... Args>
 		int printw ( const std::string &, Args const & ... );
 
+		int refresh( void );
 	};
 
 }
