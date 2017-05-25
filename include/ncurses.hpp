@@ -30,6 +30,7 @@ namespace kogcoder{
 		関数
 			int printw ( const char*, Args const & ... )
 			int printw ( const std::string, Args const & ... )
+			int refresh (void)
 	*/
 	class Ncurses{
 	public:
