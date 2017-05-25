@@ -22,4 +22,10 @@ namespace kogcoder{
 
 	}
 
+	Ncurses::~Ncurses(){
+
+		endwin();
+
+	}
+
 }
