@@ -10,3 +10,16 @@
 	Auther : teapot
 	E-mail : grncbg@gmail.com
 */
+
+#include "ncurses.hpp"
+#include <ncurses.h>
+
+namespace kogcoder{
+
+	Ncurses::Ncurses(){
+
+		initscr();
+
+	}
+
+}
