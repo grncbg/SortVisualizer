@@ -14,6 +14,8 @@
 #include <string>
 #include <ncurses.h>
 
+#undef getch
+
 #ifndef INCLUDED_NCURSES_HPP
 #define INCLUDED_NCURSES_HPP
 
@@ -44,6 +46,7 @@ namespace kogcoder{
 		int printw ( const std::string &, Args const & ... );
 
 		int refresh( void );
+		int getch( void );
 	};
 
 }
