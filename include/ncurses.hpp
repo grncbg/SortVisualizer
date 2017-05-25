@@ -22,9 +22,12 @@ namespace kogcoder{
 			ncursesの薄いラッパー
 		コンストラクタ
 			Ncurses()
-			Ncurses ( Ncurses& ) = delete;
+			Ncurses ( Ncurses& ) = delete
 		デストラクタ
 			~Ncurses()
+		関数
+			int printw ( const char*, Args const & ... )
+			int printw ( const std::string, Args const & ... )
 	*/
 	class Ncurses{
 	public:
