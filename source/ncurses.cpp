@@ -12,7 +12,6 @@
 */
 
 #include "ncurses.hpp"
-#include <ncurses.h>
 
 namespace kogcoder{
 
@@ -26,6 +25,14 @@ namespace kogcoder{
 
 		endwin();
 
+	}
+
+	int Ncurses::refresh(){
+		return ::refresh();
+	}
+
+	int Ncurses::getch( void ){
+		return ::getch();
 	}
 
 }
