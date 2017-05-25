@@ -14,5 +14,11 @@
 #ifndef INCLUDED_NCURSES_HPP
 #define INCLUDED_NCURSES_HPP
 
+class Ncurses{
+public:
+	Ncurses();
+	Ncurses ( Ncurses& ) = delete;
+	~Ncurses();
+};
 
 #endif
