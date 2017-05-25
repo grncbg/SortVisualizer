@@ -33,6 +33,7 @@ namespace kogcoder{
 			int printw ( const char*, Args const & ... )
 			int printw ( const std::string, Args const & ... )
 			int refresh (void)
+			int getch (void)
 	*/
 	class Ncurses{
 	public:
