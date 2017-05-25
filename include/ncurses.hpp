@@ -11,6 +11,8 @@
 	E-mail : grncbg@gmail.com
 */
 
+#include <string>
+
 #ifndef INCLUDED_NCURSES_HPP
 #define INCLUDED_NCURSES_HPP
 namespace kogcoder{
@@ -29,6 +31,11 @@ namespace kogcoder{
 		Ncurses ();
 		Ncurses ( Ncurses& ) = delete;
 		~Ncurses ();
+
+		template <typename ... Args>
+		int printw ( const char*, Args const & ... );
+		template <typename ... Args>
+		int printw ( const std::string, Args const & ... );
 	};
 
 }
