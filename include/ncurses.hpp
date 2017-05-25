@@ -1,0 +1,5 @@
+#ifndef INCLUDED_NCURSES_HPP
+#define INCLUDED_NCURSES_HPP
+
+
+#endif
