@@ -1,7 +1,7 @@
 COMPILER = g++
 CFLAGS   = -g -Wall -O2 -MMD -MP
 LDFLAGS  =
-LIBS     =
+LIBS     = -lncurses
 INCLUDE  = -Iinclude
 BINDIR   = bin
 TARGET   = main
