@@ -12,9 +12,11 @@
 */
 
 #include <string>
+#include <ncurses.h>
 
 #ifndef INCLUDED_NCURSES_HPP
 #define INCLUDED_NCURSES_HPP
+
 namespace kogcoder{
 
 	/*
@@ -38,9 +40,20 @@ namespace kogcoder{
 		template <typename ... Args>
 		int printw ( const char*, Args const & ... );
 		template <typename ... Args>
-		int printw ( const std::string, Args const & ... );
+		int printw ( const std::string &, Args const & ... );
+
 	};
 
 }
+
+template <typename ... Args>
+int kogcoder::Ncurses::printw ( const char* format, Args const & ... args ){
+	return ::printw( format, args ... );
+};
+
+template <typename ... Args>
+int kogcoder::Ncurses::printw ( const std::string & format, Args const & ... args ){
+	return ::printw( format, args ... );
+};
 
 #endif
