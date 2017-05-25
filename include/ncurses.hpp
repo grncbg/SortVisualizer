@@ -13,14 +13,22 @@
 
 #ifndef INCLUDED_NCURSES_HPP
 #define INCLUDED_NCURSES_HPP
-
 namespace kogcoder{
 
+	/*
+		class Ncurses
+			ncursesの薄いラッパー
+		コンストラクタ
+			Ncurses()
+			Ncurses ( Ncurses& ) = delete;
+		デストラクタ
+			~Ncurses()
+	*/
 	class Ncurses{
 	public:
-		Ncurses();
+		Ncurses ();
 		Ncurses ( Ncurses& ) = delete;
-		~Ncurses();
+		~Ncurses ();
 	};
 
 }
