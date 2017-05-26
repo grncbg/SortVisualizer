@@ -63,7 +63,7 @@ namespace kogcoder{
                         引数
                             なし
                         戻り値
-                            keypadがtrueに設定されているとき，キーコードを返す
+                            int : keypadがtrueに設定されているとき，キーコードを返す
 
                 virtual int clear ( void ) const
                     windowをクリアする
