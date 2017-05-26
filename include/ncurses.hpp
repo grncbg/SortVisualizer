@@ -10,13 +10,13 @@
     Auther : teapot <grncbg@gmail.com>
 */
 
+#ifndef INCLUDED_NCURSES_HPP
+#define INCLUDED_NCURSES_HPP
+
 #include <string>
 #include <ncurses.h>
 
 #undef getch
-
-#ifndef INCLUDED_NCURSES_HPP
-#define INCLUDED_NCURSES_HPP
 
 namespace kogcoder{
 
