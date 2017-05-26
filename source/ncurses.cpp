@@ -17,7 +17,7 @@ namespace kogcoder{
     Ncurses::Ncurses () {
         window = initscr();
 		start_color();
-        getmaxyx( window, y, x );
+        getmaxyx( window, hight, width );
     }
 
     Ncurses::~Ncurses () {
@@ -36,12 +36,12 @@ namespace kogcoder{
         return ::clear();
     }
 
-    int Ncurses::getWindowX ( void ) const {
-        return x;
+    int Ncurses::getMaxWidth ( void ) const {
+        return width;
     }
 
-    int Ncurses::getWindowY ( void ) const {
-        return y;
+    int Ncurses::getMaxHight ( void ) const {
+        return hight;
     }
 
 }

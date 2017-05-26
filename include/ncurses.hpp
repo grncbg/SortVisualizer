@@ -37,15 +37,15 @@ namespace kogcoder{
             virtual int refresh ( void ) const
             virtual int getch ( void ) const
             virtual int clear ( void ) const
-            virtual int getWindowX ( void ) const
-            virtual int getWindowY ( void ) const
+            virtual int getMaxWidth ( void ) const
+            virtual int getMaxHight ( void ) const
         変数
           private:
             WINDOW window
                 作ったwindowを持つ
-            int y
+            int hight
                 windowの高さを持つ
-            int x
+            int width
                 windowの横幅を持つ
     */
     class Ncurses{
@@ -70,12 +70,12 @@ namespace kogcoder{
 
         virtual int clear ( void ) const;
 
-        virtual int getWindowX ( void ) const;
-        virtual int getWindowY ( void ) const;
+        virtual int getMaxWidth ( void ) const;
+        virtual int getMaxHight ( void ) const;
 
       private:
         WINDOW *window;
-        int y, x;
+        int hight, width;
     };
 
 }
