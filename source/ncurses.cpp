@@ -17,6 +17,7 @@ namespace kogcoder{
     Ncurses::Ncurses(){
         window = initscr();
 		start_color();
+        getmaxyx( window, y, x );
     }
 
     Ncurses::~Ncurses(){

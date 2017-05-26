@@ -59,6 +59,7 @@ namespace kogcoder{
 
       private:
         WINDOW *window;
+        int y, x;
     };
 
 }
