@@ -72,7 +72,7 @@ int kogcoder::Ncurses::printw ( const std::string & format, Args const & ... arg
 
 template < class ... Args >
 int kogcoder::Ncurses::mvprintw ( const int y, const int x, const char* format, Args const & ... args ){
-	return mvprintw( y, x, format, args ... );
+	return ::mvprintw( y, x, format, args ... );
 }
 template < class ... Args >
 int kogcoder::Ncurses::mvprintw ( const int y, const int x, const std::string format, Args const & ... args ){
