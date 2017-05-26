@@ -22,80 +22,81 @@ namespace kogcoder{
 
     /*
         class Ncurses
-            ncursesの薄いラッパー
-        コンストラクタ
-            Ncurses()
-            Ncurses ( Ncurses& ) = delete
-        デストラクタ
-            ~Ncurses()
-        関数
-          public:
-            virtual int printw ( const char* format, Args const & ... args ) const
-            virtual int printw ( const std::string format, Args const & ... args ) const
-                printf形式で表示する
-                    引数
-                        format : 出力するフォーマット(printfと同様)
-                        args   : 出力内容の引数(printfと同様)
-                    戻り値
-                        TODO : ncursesのprintf関数の戻り値を調べる
+            概要
+                ncursesの薄いラッパー
+            コンストラクタ
+                Ncurses()
+                Ncurses ( Ncurses& ) = delete
+            デストラクタ
+                ~Ncurses()
+            関数
+            public:
+                virtual int printw ( const char* format, Args const & ... args ) const
+                virtual int printw ( const std::string format, Args const & ... args ) const
+                    printf形式で表示する
+                        引数
+                            format : 出力するフォーマット(printfと同様)
+                            args   : 出力内容の引数(printfと同様)
+                        戻り値
+                            TODO : ncursesのprintf関数の戻り値を調べる
 
-            virtual int mvprintw ( const int y, const int x, const char* format, Args const & ... args ) const
-            virtual int mvprintw ( const int y, const int x, const std::string format, Args const & ... args ) const
-                移動したあとprintf形式で表示する
-                    引数
-                        y : 移動先のy座標
-                        x : 移動先のx座標
-                        format : 出力するフォーマット(printfと同様)
-                        args   : 出力内容の引数(printfと同様)
-                    戻り値
-                        TODO : ncursesのmvprintf関数の戻り値を調べる
+                virtual int mvprintw ( const int y, const int x, const char* format, Args const & ... args ) const
+                virtual int mvprintw ( const int y, const int x, const std::string format, Args const & ... args ) const
+                    移動したあとprintf形式で表示する
+                        引数
+                            y : 移動先のy座標
+                            x : 移動先のx座標
+                            format : 出力するフォーマット(printfと同様)
+                            args   : 出力内容の引数(printfと同様)
+                        戻り値
+                            TODO : ncursesのmvprintf関数の戻り値を調べる
 
-            virtual int refresh ( void ) const
-                端末を再描画する
-                    引数
-                        なし
-                    戻り値
-                        TODO : ncursesのrefresh関数の戻り値を調べる
+                virtual int refresh ( void ) const
+                    端末を再描画する
+                        引数
+                            なし
+                        戻り値
+                            TODO : ncursesのrefresh関数の戻り値を調べる
 
-            virtual int getch ( void ) const
-                1文字入力する
-                    引数
-                        なし
-                    戻り値
-                        keypadがtrueに設定されているとき，キーコードを返す
+                virtual int getch ( void ) const
+                    1文字入力する
+                        引数
+                            なし
+                        戻り値
+                            keypadがtrueに設定されているとき，キーコードを返す
 
-            virtual int clear ( void ) const
-                windowをクリアする
-                    引数
-                        なし
-                    戻り値
-                        なし
+                virtual int clear ( void ) const
+                    windowをクリアする
+                        引数
+                            なし
+                        戻り値
+                            なし
 
-            virtual int getMaxWidth ( void ) const
-                windowの横幅を返す
-                    引数
-                        なし
-                    戻り値
-                        int : windowの横幅を返す
+                virtual int getMaxWidth ( void ) const
+                    windowの横幅を返す
+                        引数
+                            なし
+                        戻り値
+                            int : windowの横幅を返す
 
-            virtual int getMaxHight ( void ) const
-                windowの高さを返す
-                    引数
-                        なし
-                    戻り値
-                        int : windowの高さを返す
+                virtual int getMaxHight ( void ) const
+                    windowの高さを返す
+                        引数
+                            なし
+                        戻り値
+                            int : windowの高さを返す
 
 
-        変数
-          private:
-            WINDOW window
-                作ったwindowを持つ
+            変数
+            private:
+                WINDOW window
+                    作ったwindowを持つ
 
-            int hight
-                windowの高さを持つ
+                int hight
+                    windowの高さを持つ
 
-            int width
-                windowの横幅を持つ
+                int width
+                    windowの横幅を持つ
     */
     class Ncurses{
       public:
