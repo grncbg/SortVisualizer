@@ -14,33 +14,33 @@
 
 namespace kogcoder{
 
-    Ncurses::Ncurses(){
+    Ncurses::Ncurses () {
         window = initscr();
 		start_color();
         getmaxyx( window, y, x );
     }
 
-    Ncurses::~Ncurses(){
+    Ncurses::~Ncurses () {
         endwin();
     }
 
-    int Ncurses::refresh() const {
+    int Ncurses::refresh () const {
         return ::refresh();
     }
 
-    int Ncurses::getch( void ) const {
+    int Ncurses::getch ( void ) const {
         return ::getch();
     }
 
-    int Ncurses::clear( void ) const {
+    int Ncurses::clear ( void ) const {
         return ::clear();
     }
 
-    int Ncurses::getWindowX( void ) const {
+    int Ncurses::getWindowX ( void ) const {
         return x;
     }
 
-    int Ncurses::getWindowY( void ) const {
+    int Ncurses::getWindowY ( void ) const {
         return y;
     }
 
