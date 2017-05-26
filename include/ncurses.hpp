@@ -58,7 +58,7 @@ int kogcoder::Ncurses::printw ( const char* format, Args const & ... args ){
 
 template <typename ... Args>
 int kogcoder::Ncurses::printw ( const std::string & format, Args const & ... args ){
-	return ::printw( format, args ... );
+	return ::printw( format.c_str(), args ... );
 };
 
 #endif
