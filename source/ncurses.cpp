@@ -15,7 +15,7 @@
 namespace kogcoder{
 
     Ncurses::Ncurses(){
-        initscr();
+        window = initscr();
 		start_color();
     }
 

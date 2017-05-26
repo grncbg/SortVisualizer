@@ -36,7 +36,7 @@ namespace kogcoder{
             int getch (void)
     */
     class Ncurses{
-    public:
+      public:
         Ncurses ();
         Ncurses ( Ncurses& ) = delete;
         ~Ncurses ();
@@ -56,6 +56,9 @@ namespace kogcoder{
         int getch( void );
 
         int clear( void );
+
+      private:
+        WINDOW *window;
     };
 
 }
