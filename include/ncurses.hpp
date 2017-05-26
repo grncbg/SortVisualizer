@@ -47,6 +47,7 @@ namespace kogcoder{
 
 		int refresh( void );
 		int getch( void );
+		int clear( void );
 	};
 
 }

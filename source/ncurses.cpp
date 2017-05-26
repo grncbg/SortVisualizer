@@ -34,4 +34,8 @@ namespace kogcoder{
 		return ::getch();
 	}
 
+	int Ncurses::clear( void ){
+		return ::clear();
+	}
+
 }
