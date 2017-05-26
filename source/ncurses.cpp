@@ -15,15 +15,11 @@
 namespace kogcoder{
 
     Ncurses::Ncurses(){
-
         initscr();
-
     }
 
     Ncurses::~Ncurses(){
-
         endwin();
-
     }
 
     int Ncurses::refresh(){
