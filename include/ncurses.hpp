@@ -12,6 +12,7 @@
 
 #include <string>
 #include <ncurses.h>
+#include <type_traits>
 
 #undef getch
 
@@ -40,26 +41,33 @@ namespace kogcoder{
 		Ncurses ( Ncurses& ) = delete;
 		~Ncurses ();
 
-		template <typename ... Args>
+		template < class ... Args >
 		int printw ( const char*, Args const & ... );
-		template <typename ... Args>
+		template < class ... Args >
 		int printw ( const std::string &, Args const & ... );
 
+		template < class T, class ... Args >
+		int mvprintw ( const T, const T, const char*, Args const & ...);
+		template < class T, class ... Args >
+		int mvprintw ( const T, const T, const std::string, Args const & ...);
+
 		int refresh( void );
+
 		int getch( void );
+
 		int clear( void );
 	};
 
 }
 
-template <typename ... Args>
+template <class ... Args>
 int kogcoder::Ncurses::printw ( const char* format, Args const & ... args ){
 	return ::printw( format, args ... );
 };
 
-template <typename ... Args>
+template <class ... Args>
 int kogcoder::Ncurses::printw ( const std::string & format, Args const & ... args ){
-	return ::printw( format.c_str(), args ... );
+	return printw( format.c_str(), args ... );
 };
 
 #endif
