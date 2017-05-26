@@ -24,16 +24,24 @@ namespace kogcoder{
         endwin();
     }
 
-    int Ncurses::refresh(){
+    int Ncurses::refresh() const {
         return ::refresh();
     }
 
-    int Ncurses::getch( void ){
+    int Ncurses::getch( void ) const {
         return ::getch();
     }
 
-    int Ncurses::clear( void ){
+    int Ncurses::clear( void ) const {
         return ::clear();
+    }
+
+    int Ncurses::getWindowX( void ) const {
+        return x;
+    }
+
+    int Ncurses::getWindowY( void ) const {
+        return y;
     }
 
 }
