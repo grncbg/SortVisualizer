@@ -46,10 +46,10 @@ namespace kogcoder{
 		template < class ... Args >
 		int printw ( const std::string &, Args const & ... );
 
-		template < class T, class ... Args >
-		int mvprintw ( const T, const T, const char*, Args const & ...);
-		template < class T, class ... Args >
-		int mvprintw ( const T, const T, const std::string, Args const & ...);
+		template < class ... Args >
+		int mvprintw ( const int, const int, const char*, Args const & ...);
+		template < class ... Args >
+		int mvprintw ( const int, const int, const std::string, Args const & ...);
 
 		int refresh( void );
 
@@ -60,14 +60,23 @@ namespace kogcoder{
 
 }
 
-template <class ... Args>
+template < class ... Args >
 int kogcoder::Ncurses::printw ( const char* format, Args const & ... args ){
 	return ::printw( format, args ... );
 };
 
-template <class ... Args>
+template < class ... Args >
 int kogcoder::Ncurses::printw ( const std::string & format, Args const & ... args ){
 	return printw( format.c_str(), args ... );
 };
+
+template < class ... Args >
+int kogcoder::Ncurses::mvprintw ( const int y, const int x, const char* format, Args const & ... args ){
+	return mvprintw( y, x, format, args ... );
+}
+template < class ... Args >
+int kogcoder::Ncurses::mvprintw ( const int y, const int x, const std::string format, Args const & ... args ){
+	return mvprintw( y, x, format.c_str(), args ... );
+}
 
 #endif
