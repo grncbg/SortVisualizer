@@ -13,6 +13,10 @@
 #ifndef INCLUDED_REPEAT_HPP
 #define INCLUDED_REPEAT_HPP
 
+namespace kogcoder{
 
+
+
+}
 
 #endif
