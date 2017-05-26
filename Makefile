@@ -22,7 +22,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	@[ -d $(OBJDIR) ]
 	$(COMPILER) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 
-.PHONY: clean
+.PHONY: all
 all: clean $(TARGET)
 
 .PHONY: clean
