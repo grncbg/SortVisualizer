@@ -29,10 +29,24 @@ namespace kogcoder{
         デストラクタ
             ~Ncurses()
         関数
-            int printw ( const char*, Args const & ... )
-            int printw ( const std::string, Args const & ... )
-            int refresh (void)
-            int getch (void)
+          public:
+            virtual int printw ( const char*, Args const & ... ) const
+            virtual int printw ( const std::string, Args const & ... ) const
+            virtual int mvprintw ( const int, const int, const char*, Args const & ... ) const
+            virtual int mvprintw ( const int, const int, const std::string, Args const & ... ) const
+            virtual int refresh ( void ) const
+            virtual int getch ( void ) const
+            virtual int clear ( void ) const
+            virtual int getWindowX ( void ) const
+            virtual int getWindowY ( void ) const
+        変数
+          private:
+            WINDOW window
+                作ったwindowを持つ
+            int y
+                windowの高さを持つ
+            int x
+                windowの横幅を持つ
     */
     class Ncurses{
       public:
