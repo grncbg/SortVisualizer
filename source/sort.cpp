@@ -16,6 +16,18 @@
 namespace kogcoder{
 
     int BubbleSort::next(){
+		if (i == vec.size() - 1)
+			return 0;
+		//右が小さかったら入れ替え
+		if(vec[j] < vec[j-1])
+			std::swap(vec[j], vec[j - 1]);
+
+		j--;
+		if(i == j){
+			i++;
+			j = vec.size() - 1;
+		}
+		return 1;
     }
 
 }
