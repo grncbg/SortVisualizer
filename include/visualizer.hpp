@@ -24,6 +24,7 @@ namespace kogcoder{
         virtual ~Visualizer () noexcept;
         virtual int draw () = 0;
         virtual int run ();
+        virtual int setDate() = 0;
       private:
         Ncurses* ncurses;
         int height,width;
