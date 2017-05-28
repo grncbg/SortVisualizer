@@ -14,27 +14,20 @@
 
 namespace kogcoder{
 
-    Visualizer::Visualizer( ) noexcept{
-        ncurses = new Ncurses;
-        height = ncurses->getMaxHeight();
-        width  = ncurses->getMaxWidth();
-        curs_set(0);
-    }
-
-    Visualizer::~Visualizer () noexcept{
-        delete ncurses;
-    }
-
     int Visualizer::run(){
         int ret = setData();
-        ncurses->clear();
+        ncurses.clear();
         draw();
-        ncurses->refresh();
+        ncurses.refresh();
         return ret;
     }
 
     int BubbleSortVisualizer::setData() noexcept {
-        return bs.next();
+        return bs.next(pickup);
+    }
+
+    int BubbleSortVisualizer::draw() const noexcept {
+        return true;
     }
 
 }
