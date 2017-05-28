@@ -24,7 +24,7 @@ namespace kogcoder{
         virtual ~Visualizer () noexcept;
         virtual int draw () = 0;
         virtual int run ();
-        virtual int setDate() = 0;
+        virtual int setData() = 0;
       private:
         Ncurses* ncurses;
         int height,width;
@@ -33,6 +33,7 @@ namespace kogcoder{
     class BubbleSortVisualizer : public Visualizer{
       public:
         BubbleSortVisualizer ( BubbleSort &bs ) noexcept : bs(bs) {}
+        virtual int setData() override;
       private:
         BubbleSort &bs;
     };
