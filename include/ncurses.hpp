@@ -102,6 +102,7 @@ namespace kogcoder{
       public:
         Ncurses ();
         Ncurses ( Ncurses& ) = delete;
+        Ncurses ( Ncurses&& ) = default;
         ~Ncurses ();
 
         template < class ... Args >
