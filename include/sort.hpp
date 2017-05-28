@@ -24,7 +24,7 @@ namespace kogcoder{
 
     class BubbleSort{
       public:
-        BubbleSort ( std::vector<int> &vec ) : vec(vec), i(0), j(0) {}
+        BubbleSort ( std::vector<int> &vec ) : vec(vec), i(0), j(vec.size() - 1) {}
         int next();
       private:
         std::vector<int>& vec;
