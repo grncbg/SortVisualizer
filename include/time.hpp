@@ -13,5 +13,10 @@
 #ifndef INCLUDED_TIMT_HPP
 #define INCLUDED_TIMT_HPP
 
+namespace kogcoder{
+
+
+
+}
 
 #endif
