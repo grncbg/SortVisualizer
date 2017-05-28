@@ -33,4 +33,8 @@ namespace kogcoder{
         return ret;
     }
 
+    int BubbleSortVisualizer::setData() noexcept {
+        return bs.next();
+    }
+
 }
