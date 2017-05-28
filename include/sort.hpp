@@ -17,11 +17,13 @@
 
 namespace kogcoder{
 
+    //ランダムな並びの並列を作る
     class RandomArray{
       public:
         virtual std::vector<int> make(unsigned int) const;
     };
 
+    //バブルソート
     class BubbleSort{
       public:
         BubbleSort ( std::vector<int> &vec ) : vec(vec), i(0), j(vec.size() - 1) {}
