@@ -104,7 +104,7 @@ namespace kogcoder{
         Ncurses () noexcept;
         Ncurses ( Ncurses& ) = delete;
         Ncurses ( Ncurses&& ) noexcept = default;
-        ~Ncurses () noexcept;
+        virtual ~Ncurses () noexcept;
 
         template < class ... Args >
         int printw ( const char*, Args const & ... ) const noexcept;
