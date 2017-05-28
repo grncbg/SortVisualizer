@@ -23,10 +23,11 @@ namespace kogcoder{
       public:
         Visualizer () noexcept;
         virtual ~Visualizer () noexcept;
-        virtual int draw () = 0;
         virtual int run ();
-        virtual int setData() = 0;
       private:
+        virtual int draw () = 0;
+        virtual int setData() = 0;
+      protected:
         Ncurses* ncurses;
         int height,width;
         std::vector<int> data;
