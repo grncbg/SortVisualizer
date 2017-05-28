@@ -11,12 +11,12 @@
 */
 
 #include <algorithm>
+#include <random>
 #include "sort.hpp"
 
 namespace kogcoder{
 
     std::vector<int>&& RandomArray::make(unsigned int) const {
-
     }
 
     int BubbleSort::next(){
