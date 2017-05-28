@@ -6,55 +6,56 @@
     This software is released under the MIT License.
     http://opensource.org/licenses/mit-license.php
 
-    Auther : teapot
-    E-mail : grncbg@gmail.com
+    Auther : teapot <grncbg@gmail.com>
 */
 
 #include <iostream>
-#include "ncurses.hpp"
-#include <ncurses.h>
 #include <chrono>
+
+#include <ncurses.h>
+
+#include "ncurses.hpp"
 #include "repeat.hpp"
+#include "time.hpp"
+#include "sort.hpp"
+#include "visualizer.hpp"
 
 using namespace kogcoder;
+using namespace std;
 using namespace std::chrono;
 using namespace std::literals::chrono_literals;
 
-class Test : public Routine{
-  public:
-    Test () {
-        ncurses = new Ncurses;
-        height = ncurses->getMaxHeight();
-        curs_set(0);
-        c = 0;
-    }
-    virtual ~Test(){
-        delete ncurses;
-    }
-    virtual int run ( void ) override;
-  private:
-    int height;
-    int c;
-    Ncurses *ncurses;
-};
-int Test::run( void ) {
-    ncurses->clear();
-    ncurses->mvprintw( c, 0, "%d" , c );
-    ncurses->refresh();
-    return (c == height ? c = 0 : ++c);
-}
-
 // main関数
 int main( void ){
+    //ncursesのラッパー
+    Ncurses ncurses;
 
-    Test *t = new Test();
-    Repeat<std::milli> a( t, 125ms );
+    //ランダムな配列のジェネレーター
+    RandomArray gen;
+    //時間処理のクラス(waitのみ)
+    Time time;
+
+    //端末の高さを取得
+    int height = ncurses.getMaxHeight();
 
     while(true){
-        a.start();
-    }
+        //ランダムな配列を作成
+        vector<int> vec = gen.make(height);
+        //バブルソート
+        BubbleSort bs(vec);
+        //バブルソートのビジュアライザ
+        BubbleSortVisualizer *bsv = new BubbleSortVisualizer( ncurses, bs, vec );
+        //連続処理
+        Repeat<std::milli> r( bsv, 25ms );
 
-    delete t;
+        //処理の開始
+        r.start();
+
+        delete bsv;
+
+        //wait
+        time.wait<std::milli>(1000ms);
+    }
 
     return 0;
 }
