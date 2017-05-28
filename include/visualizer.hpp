@@ -13,10 +13,11 @@
 #ifndef INCLUDED_VISUALIZER_HPP
 #define INCLUDED_VISUALIZER_HPP
 
+#include "ncurses.hpp"
+
 namespace kogcoder{
 
     class Visualizer{
-
     };
 
 }
