@@ -38,7 +38,6 @@ namespace kogcoder{
             変数
                milliseconds> なし
     */
-    /*Repeatクラスに渡すための抽象クラス*/
     class Routine{
       public:
         virtual int run ( void ) = 0;
