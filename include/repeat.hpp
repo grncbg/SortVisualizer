@@ -44,12 +44,13 @@ namespace kogcoder{
         virtual int run ( void ) = 0;
     };
 
-    template < class T = std::milli >
+    template < class T >
     class Repeat{
       public:
         Repeat () = delete;
         Repeat ( Repeat& ) = default;
         Repeat ( Repeat&& ) = default;
+        Repeat ( Routine *routine, std::chrono::duration< long long, T > &interval ) : routine( routine ), interval( interval ){}
         Repeat ( Routine *routine, std::chrono::duration< long long, T > &&interval ) : routine( routine ), interval( interval ){}
 
         virtual void start( void ) const;
