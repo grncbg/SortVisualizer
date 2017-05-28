@@ -30,8 +30,10 @@ namespace kogcoder{
     }
 
     int BubbleSort::next() {
+        //終了したら0を返す
 		if (i == vec.size() - 1)
 			return 0;
+
 		//右が小さかったら入れ替え
 		if(vec[j] < vec[j-1])
 			std::swap(vec[j], vec[j - 1]);
