@@ -13,6 +13,10 @@
 #ifndef INCLUDED_VISUALIZER_HPP
 #define INCLUDED_VISUALIZER_HPP
 
+namespace kogcoder{
 
+
+
+}
 
 #endif
