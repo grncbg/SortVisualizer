@@ -21,5 +21,8 @@ namespace kogcoder{
         curs_set(0);
     }
 
+    Visualizer::~Visualizer () noexcept{
+        delete ncurses;
+    }
 
 }
