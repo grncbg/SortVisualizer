@@ -14,6 +14,7 @@
 #define INCLUDED_REPEAT_HPP
 
 #include <chrono>
+#include "time.hpp"
 
 namespace kogcoder{
 
@@ -59,13 +60,8 @@ namespace kogcoder{
 
     template < class T >
     void Repeat<T>::start() const {
-        std::chrono::steady_clock::time_point s,e;
-        e = std::chrono::steady_clock::now();
-        while(routine->run()){
-            s = std::chrono::steady_clock::now();
-            while( e - s < interval )
-                e = std::chrono::steady_clock::now();
-        }
+        while(routine->run())
+            Time::wait(interval);
     }
 
 }
