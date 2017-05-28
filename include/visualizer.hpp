@@ -14,6 +14,7 @@
 #define INCLUDED_VISUALIZER_HPP
 
 #include "ncurses.hpp"
+#include "sort.hpp"
 
 namespace kogcoder{
 
@@ -26,6 +27,10 @@ namespace kogcoder{
       private:
         Ncurses* ncurses;
         int height,width;
+    };
+
+    class BubbleSortVisualizer : public Visualizer{
+
     };
 
 }
