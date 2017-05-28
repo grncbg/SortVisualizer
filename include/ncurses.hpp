@@ -18,6 +18,11 @@
 
 #undef getch
 
+#define WHITE_LINE COLOR_PAIRS - 1
+#define BLUE_LINE  COLOR_PAIRS - 2
+#define RED_LINE   COLOR_PAIRS - 3
+
+
 namespace kogcoder{
 
     /*
@@ -125,9 +130,9 @@ namespace kogcoder{
         virtual int getMaxWidth ( void ) const noexcept;
         virtual int getMaxHeight ( void ) const noexcept;
 
-        virtual int hbar ( unsigned int, int = COLOR_WHITE ) const noexcept;
+        virtual int hbar ( const unsigned int, const int = WHITE_LINE ) const noexcept;
 
-        virtual int move ( int, int ) const noexcept;
+        virtual int move ( const int, const int ) const noexcept;
 
         virtual int nextLine( void ) const noexcept;
 
