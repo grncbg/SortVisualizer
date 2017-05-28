@@ -129,6 +129,8 @@ namespace kogcoder{
 
         virtual int move ( int, int ) const noexcept;
 
+        virtual int nextLine( void ) const noexcept;
+
       private:
         WINDOW *window;
         int hight, width;

@@ -56,4 +56,10 @@ namespace kogcoder{
         return ::move( y, x );
     }
 
+    int Ncurses::nextLine( void ) const noexcept {
+        int y, x;
+        getyx( window, y, x );
+        return move( ++y, 0 );
+    }
+
 }
