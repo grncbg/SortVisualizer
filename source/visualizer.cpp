@@ -27,6 +27,14 @@ namespace kogcoder{
     }
 
     int BubbleSortVisualizer::draw() const noexcept {
+        for( unsigned int i = 0; i < data.size(); i++,ncurses.nextLine() ){
+            if(i < pickup.first)
+                ncurses.hbar(data[i], BLUE_LINE);
+            else if(i == pickup.second || i == pickup.second + 1)
+                ncurses.hbar(data[i], RED_LINE);
+            else
+                ncurses.hbar(data[i]);
+        }
         return true;
     }
 
