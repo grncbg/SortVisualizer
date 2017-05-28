@@ -33,7 +33,7 @@ namespace kogcoder{
     class BubbleSortVisualizer : public Visualizer{
       public:
         BubbleSortVisualizer ( BubbleSort &bs ) noexcept : bs(bs) {}
-        virtual int setData() override;
+        virtual int setData() noexcept override;
       private:
         BubbleSort &bs;
     };
