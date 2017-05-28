@@ -14,6 +14,7 @@
 #define INCLUDED_VISUALIZER_HPP
 
 #include <vector>
+
 #include "ncurses.hpp"
 #include "sort.hpp"
 #include "repeat.hpp"
@@ -39,13 +40,13 @@ namespace kogcoder{
 
     class BubbleSortVisualizer : public Visualizer{
       public:
-        BubbleSortVisualizer ( Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v ) noexcept : Visualizer(ncurses), bs(bs), data(v) {}
-        virtual int setData() noexcept override;
-        virtual int draw() const noexcept override;
+        BubbleSortVisualizer ( Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v ) noexcept : Visualizer( ncurses ), bs( bs ), data( v ) {}
+        virtual int setData () noexcept override;
+        virtual int draw () const noexcept override;
       private:
         BubbleSort &bs;
-        std::vector<int> &data;
-        std::pair<unsigned int,unsigned int> pickup;
+        std::vector< int > &data;
+        std::pair< unsigned int, unsigned int > pickup;
     };
 
 }
