@@ -9,3 +9,9 @@
 
     Auther : teapot <grncbg@gmail.com>
 */
+
+#ifndef INCLUDED_TIMT_HPP
+#define INCLUDED_TIMT_HPP
+
+
+#endif
