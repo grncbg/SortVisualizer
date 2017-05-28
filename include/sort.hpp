@@ -18,7 +18,10 @@
 namespace kogcoder{
 
     class BubbleSort{
-
+      public:
+        BubbleSort ( std::vector<int> &vec ) : vec(vec) {}
+      private:
+        std::vector<int>& vec;
     };
 
 }
