@@ -26,7 +26,7 @@ namespace kogcoder{
     }
 
     int Visualizer::run(){
-        int ret = setDate();
+        int ret = setData();
         ncurses->clear();
         draw();
         ncurses->refresh();
