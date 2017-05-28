@@ -16,10 +16,20 @@
 
 namespace kogcoder{
 
-    std::vector<int>&& RandomArray::make(unsigned int) const {
+    std::vector<int>&& RandomArray::make( unsigned int size ) const {
+        std::vector<long long> v( size );
+        //vectorに連続な値を設定
+        iota( v.rbegin(), v.rend(), 1 );
+
+        std::random_device rnd;
+
+        //ランダムに並び替え
+        shuffle( v.begin(), v.end(), std::mt19937( rnd() ) );
+
+        return std::move( v );
     }
 
-    int BubbleSort::next(){
+    int BubbleSort::next() {
 		if (i == vec.size() - 1)
 			return 0;
 		//右が小さかったら入れ替え
