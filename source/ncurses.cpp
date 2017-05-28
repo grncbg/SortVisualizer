@@ -18,6 +18,9 @@ namespace kogcoder{
         window = initscr();
 		start_color();
         getmaxyx( window, hight, width );
+        init_pair( COLOR_PAIRS - 1, COLOR_BLACK, COLOR_WHITE );
+        init_pair( COLOR_PAIRS - 2, COLOR_BLACK, COLOR_BLUE );
+        init_pair( COLOR_PAIRS - 3, COLOR_BLACK, COLOR_RED );
     }
 
     Ncurses::~Ncurses () noexcept {
@@ -44,15 +47,14 @@ namespace kogcoder{
         return hight;
     }
 
-    int Ncurses::hbar ( unsigned int len, int color ) const noexcept {
-        init_pair( COLOR_PAIRS - 1, COLOR_BLACK, color );
-        attron(COLOR_PAIR(COLOR_PAIRS - 1));
+    int Ncurses::hbar ( const unsigned int len, const int color ) const noexcept {
+        attron(COLOR_PAIR(color));
         int ret = hline(' ', len);
         attron(COLOR_PAIR(0));
         return ret;
     }
 
-    int Ncurses::move ( int y, int x ) const noexcept {
+    int Ncurses::move ( const int y, const int x ) const noexcept {
         return ::move( y, x );
     }
 
