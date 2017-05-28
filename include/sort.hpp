@@ -13,6 +13,10 @@
 #ifndef INCLUDED_SORT_HPP
 #define INCLUDED_SORT_HPP
 
+namespace kogcoder{
 
+
+
+}
 
 #endif
