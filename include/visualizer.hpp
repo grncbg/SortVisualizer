@@ -15,7 +15,9 @@
 
 namespace kogcoder{
 
+    class Visualizer{
 
+    };
 
 }
 
