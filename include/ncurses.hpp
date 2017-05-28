@@ -100,29 +100,29 @@ namespace kogcoder{
     */
     class Ncurses{
       public:
-        Ncurses ();
+        Ncurses () noexcept;
         Ncurses ( Ncurses& ) = delete;
-        Ncurses ( Ncurses&& ) = default;
-        ~Ncurses ();
+        Ncurses ( Ncurses&& ) noexcept = default;
+        ~Ncurses () noexcept;
 
         template < class ... Args >
-        int printw ( const char*, Args const & ... ) const;
+        int printw ( const char*, Args const & ... ) const noexcept;
         template < class ... Args >
-        int printw ( const std::string &, Args const & ... ) const;
+        int printw ( const std::string &, Args const & ... ) const noexcept;
 
         template < class ... Args >
-        int mvprintw ( const int, const int, const char*, Args const & ...) const;
+        int mvprintw ( const int, const int, const char*, Args const & ...) const noexcept;
         template < class ... Args >
-        int mvprintw ( const int, const int, const std::string, Args const & ...) const;
+        int mvprintw ( const int, const int, const std::string, Args const & ...) const noexcept;
 
-        virtual int refresh ( void ) const;
+        virtual int refresh ( void ) const noexcept;
 
-        virtual int getch ( void ) const;
+        virtual int getch ( void ) const noexcept;
 
-        virtual int clear ( void ) const;
+        virtual int clear ( void ) const noexcept;
 
-        virtual int getMaxWidth ( void ) const;
-        virtual int getMaxHight ( void ) const;
+        virtual int getMaxWidth ( void ) const noexcept;
+        virtual int getMaxHight ( void ) const noexcept;
 
       private:
         WINDOW *window;
@@ -132,21 +132,21 @@ namespace kogcoder{
 }
 
 template < class ... Args >
-int kogcoder::Ncurses::printw ( const char* format, Args const & ... args ) const {
+int kogcoder::Ncurses::printw ( const char* format, Args const & ... args ) const noexcept {
     return ::printw( format, args ... );
 };
 
 template < class ... Args >
-int kogcoder::Ncurses::printw ( const std::string & format, Args const & ... args ) const {
+int kogcoder::Ncurses::printw ( const std::string & format, Args const & ... args ) const noexcept {
     return printw( format.c_str(), args ... );
 };
 
 template < class ... Args >
-int kogcoder::Ncurses::mvprintw ( const int y, const int x, const char* format, Args const & ... args ) const {
+int kogcoder::Ncurses::mvprintw ( const int y, const int x, const char* format, Args const & ... args ) const noexcept {
     return ::mvprintw( y, x, format, args ... );
 }
 template < class ... Args >
-int kogcoder::Ncurses::mvprintw ( const int y, const int x, const std::string format, Args const & ... args ) const {
+int kogcoder::Ncurses::mvprintw ( const int y, const int x, const std::string format, Args const & ... args ) const noexcept {
     return mvprintw( y, x, format.c_str(), args ... );
 }
 
