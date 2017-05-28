@@ -127,6 +127,8 @@ namespace kogcoder{
 
         virtual int hbar ( unsigned int, int = COLOR_WHITE ) const noexcept;
 
+        virtual int move ( int, int ) const noexcept;
+
       private:
         WINDOW *window;
         int hight, width;

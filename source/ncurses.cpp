@@ -52,4 +52,8 @@ namespace kogcoder{
         return ret;
     }
 
+    int Ncurses::move ( int y, int x ) const noexcept {
+        return ::move( y, x );
+    }
+
 }
