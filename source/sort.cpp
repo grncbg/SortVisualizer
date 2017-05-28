@@ -9,3 +9,9 @@
 
     Auther : teapot <grncbg@gmail.com>
 */
+
+namespace kogcoder{
+
+
+
+}
