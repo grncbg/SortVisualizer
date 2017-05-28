@@ -22,7 +22,6 @@
 #define BLUE_LINE  COLOR_PAIRS - 2
 #define RED_LINE   COLOR_PAIRS - 3
 
-
 namespace kogcoder{
 
     /*
