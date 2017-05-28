@@ -40,7 +40,7 @@ namespace kogcoder{
         return width;
     }
 
-    int Ncurses::getMaxHight ( void ) const noexcept {
+    int Ncurses::getMaxHeight ( void ) const noexcept {
         return hight;
     }
 

@@ -80,7 +80,7 @@ namespace kogcoder{
                         戻り値
                             int : windowの横幅を返す
 
-                virtual int getMaxHight ( void ) const noexcept
+                virtual int getMaxHeight ( void ) const noexcept
                     windowの高さを返す
                         引数
                             なし
@@ -123,7 +123,7 @@ namespace kogcoder{
         virtual int clear ( void ) const noexcept;
 
         virtual int getMaxWidth ( void ) const noexcept;
-        virtual int getMaxHight ( void ) const noexcept;
+        virtual int getMaxHeight ( void ) const noexcept;
 
       private:
         WINDOW *window;
