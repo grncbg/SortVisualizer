@@ -125,6 +125,8 @@ namespace kogcoder{
         virtual int getMaxWidth ( void ) const noexcept;
         virtual int getMaxHeight ( void ) const noexcept;
 
+        virtual int hbar ( unsigned int, int = COLOR_WHITE ) const noexcept;
+
       private:
         WINDOW *window;
         int hight, width;

@@ -44,4 +44,12 @@ namespace kogcoder{
         return hight;
     }
 
+    int Ncurses::hbar ( unsigned int len, int color ) const noexcept {
+        init_pair( COLOR_PAIRS - 1, COLOR_BLACK, color );
+        attron(COLOR_PAIR(COLOR_PAIRS - 1));
+        int ret = hline(' ', len);
+        attron(COLOR_PAIR(0));
+        return ret;
+    }
+
 }
