@@ -10,6 +10,8 @@
     Auther : teapot <grncbg@gmail.com>
 */
 
+#include "visualizer.hpp"
+
 namespace kogcoder{
 
 
