@@ -35,26 +35,38 @@ namespace kogcoder{
                             int : すべて終了したときfalseを返す
                                   それ以外の場合任意のtrueに相当する値を返して良い
             変数
-                なし
+               milliseconds> なし
     */
+    /*Repeatクラスに渡すための抽象クラス*/
     class Routine{
       public:
-        virtual int run () = 0;
+        virtual int run ( void ) = 0;
+    };
+
+    template < class T = std::milli >
+    class Repeat{
+      public:
+        Repeat () = delete;
+        Repeat ( Repeat& ) = default;
+        Repeat ( Repeat&& ) = default;
+        Repeat ( Routine *routine, std::chrono::duration< long long, T > &&interval ) : routine( routine ), interval( interval ){}
+
+        virtual void start( void ) const;
+      private:
+        Routine *routine;
+        std::chrono::duration< long long, T > interval;
     };
 
     template < class T >
-    class Repeat{
-      public:
-        Repeat () noexcept = default;
-        Repeat ( Repeat& ) = default;
-        Repeat ( Repeat&& ) = default;
-        Repeat ( std::chrono::duration< T > &interval ) : interval( interval ) {}
-        Repeat ( Routine *routine ) : routine( routine ) {}
-        Repeat ( Routine *routine, std::chrono::duration< T > &interval ) : routine( routine ), interval( interval ){}
-      private:
-        Routine *routine;
-        std::chrono::duration<T> interval;
-    };
+    void Repeat<T>::start() const {
+        std::chrono::steady_clock::time_point s,e;
+        e = std::chrono::steady_clock::now();
+        while(routine->run()){
+            s = std::chrono::steady_clock::now();
+            while( e - s < interval )
+                e = std::chrono::steady_clock::now();
+        }
+    }
 
 }
 
