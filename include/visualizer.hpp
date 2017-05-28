@@ -20,7 +20,9 @@ namespace kogcoder{
     class Visualizer{
       public:
         Visualizer () noexcept;
-        virtual ~Visualizer() noexcept;
+        virtual ~Visualizer () noexcept;
+        virtual int draw () = 0;
+        virtual int run ();
       private:
         Ncurses* ncurses;
         int height,width;
