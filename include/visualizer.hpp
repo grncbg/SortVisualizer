@@ -16,29 +16,36 @@
 #include <vector>
 #include "ncurses.hpp"
 #include "sort.hpp"
+#include "repeat.hpp"
 
 namespace kogcoder{
 
-    class Visualizer{
+    class Visualizer : public Routine{
       public:
-        Visualizer () noexcept;
-        virtual ~Visualizer () noexcept;
+        Visualizer ( Ncurses &ncurses ) noexcept : ncurses(ncurses){
+            height = ncurses.getMaxHeight();
+            width  = ncurses.getMaxWidth();
+            curs_set(0);
+        }
+        virtual ~Visualizer () noexcept = default;
         virtual int run ();
       private:
-        virtual int draw () = 0;
+        virtual int draw () const = 0;
         virtual int setData() = 0;
       protected:
-        Ncurses* ncurses;
+        Ncurses& ncurses;
         int height,width;
-        std::vector<int> data;
     };
 
     class BubbleSortVisualizer : public Visualizer{
       public:
-        BubbleSortVisualizer ( BubbleSort &bs ) noexcept : bs(bs) {}
+        BubbleSortVisualizer ( Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v ) noexcept : Visualizer(ncurses), bs(bs), data(v) {}
         virtual int setData() noexcept override;
+        virtual int draw() const noexcept override;
       private:
         BubbleSort &bs;
+        std::vector<int> &data;
+        std::pair<unsigned int,unsigned int> pickup;
     };
 
 }
