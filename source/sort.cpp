@@ -12,6 +12,7 @@
 
 #include <algorithm>
 #include <random>
+
 #include "sort.hpp"
 
 namespace kogcoder{
@@ -41,7 +42,7 @@ namespace kogcoder{
 
 		//右が小さかったら入れ替え
 		if(vec[j] < vec[j-1])
-			std::swap(vec[j], vec[j - 1]);
+			std::swap( vec[j], vec[j - 1] );
 
 		j--;
 		if(i == j){
