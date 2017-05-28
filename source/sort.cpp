@@ -15,6 +15,10 @@
 
 namespace kogcoder{
 
+    std::vector<int>&& RandomArray::make(unsigned int) const {
+
+    }
+
     int BubbleSort::next(){
 		if (i == vec.size() - 1)
 			return 0;
