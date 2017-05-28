@@ -18,12 +18,13 @@
 namespace kogcoder{
 
     class Time{
+      public:
         template < class T = std::milli >
-        static void wait(std::chrono::duration< long long, T > &&);
+        static void wait(std::chrono::duration< long long, T > &);
     };
 
     template < class T >
-    void Time::wait(std::chrono::duration< long long, T > &&time){
+    void Time::wait(std::chrono::duration< long long, T > &time){
         std::chrono::steady_clock::time_point s,e;
         s = std::chrono::steady_clock::now();
         e = std::chrono::steady_clock::now();
