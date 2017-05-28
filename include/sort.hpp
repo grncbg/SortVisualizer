@@ -17,6 +17,9 @@
 
 namespace kogcoder{
 
+    class RandomArray{
+    };
+
     class BubbleSort{
       public:
         BubbleSort ( std::vector<int> &vec ) : vec(vec), i(0), j(0) {}
