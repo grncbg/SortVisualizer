@@ -25,4 +25,10 @@ namespace kogcoder{
         delete ncurses;
     }
 
+    Visualizer::run(){
+        ncurses->clear();
+        draw();
+        ncurses->refresh();
+    }
+
 }
