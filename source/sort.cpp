@@ -10,10 +10,12 @@
     Auther : teapot <grncbg@gmail.com>
 */
 
+#include <algorithm>
 #include "sort.hpp"
 
 namespace kogcoder{
 
-
+    int BubbleSort::next(){
+    }
 
 }
