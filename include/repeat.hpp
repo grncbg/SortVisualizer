@@ -55,13 +55,14 @@ namespace kogcoder{
         virtual void start( void ) const;
       private:
         Routine *routine;
+        Time time;
         std::chrono::duration< long long, T > interval;
     };
 
     template < class T >
     void Repeat<T>::start() const {
         while(routine->run())
-            Time::wait(interval);
+            time.wait<T>(interval);
     }
 
 }
