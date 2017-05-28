@@ -31,7 +31,10 @@ namespace kogcoder{
     };
 
     class BubbleSortVisualizer : public Visualizer{
-
+      public:
+        BubbleSortVisualizer ( BubbleSort &bs ) noexcept : bs(bs) {}
+      private:
+        BubbleSort &bs;
     };
 
 }
