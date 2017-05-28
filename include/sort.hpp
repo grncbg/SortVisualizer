@@ -13,9 +13,13 @@
 #ifndef INCLUDED_SORT_HPP
 #define INCLUDED_SORT_HPP
 
+#include <vector>
+
 namespace kogcoder{
 
+    class BubbleSort{
 
+    };
 
 }
 
