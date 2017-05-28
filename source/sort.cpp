@@ -19,7 +19,7 @@ namespace kogcoder{
     std::vector< int > RandomArray::make( unsigned int size ) const {
         std::vector< int > v( size );
         //vectorに連続な値を設定
-        iota( v.rbegin(), v.rend(), 1 );
+        iota( v.begin(), v.end(), 1 );
 
         std::random_device rnd;
 
