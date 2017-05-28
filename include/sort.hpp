@@ -18,6 +18,8 @@
 namespace kogcoder{
 
     class RandomArray{
+      public:
+        virtual std::vector<int>&& make(unsigned int) const;
     };
 
     class BubbleSort{
