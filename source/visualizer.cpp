@@ -14,6 +14,12 @@
 
 namespace kogcoder{
 
+    Visualizer::Visualizer( ) noexcept{
+        ncurses = new Ncurses;
+        height = ncurses->getMaxHeight();
+        width  = ncurses->getMaxWidth();
+        curs_set(0);
+    }
 
 
 }
