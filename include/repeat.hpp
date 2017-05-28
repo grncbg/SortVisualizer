@@ -14,6 +14,7 @@
 #define INCLUDED_REPEAT_HPP
 
 #include <chrono>
+
 #include "time.hpp"
 
 namespace kogcoder{
@@ -60,9 +61,9 @@ namespace kogcoder{
     };
 
     template < class T >
-    void Repeat<T>::start() const {
-        while(routine->run())
-            time.wait<T>(interval);
+    void Repeat< T >::start() const {
+        while( routine->run() )
+            time.wait< T >( interval );
     }
 
 }
