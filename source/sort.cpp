@@ -29,10 +29,15 @@ namespace kogcoder{
         return v;
     }
 
-    int BubbleSort::next() {
+    int BubbleSort::next( std::pair<unsigned int,unsigned int> &pickup ) {
+        pickup.first  = i;
+        pickup.second = j - 1;
+
         //終了したら0を返す
-		if (i == vec.size() - 1)
+		if (i == vec.size() - 1){
+            pickup.first = vec.size();
 			return 0;
+        }
 
 		//右が小さかったら入れ替え
 		if(vec[j] < vec[j-1])
