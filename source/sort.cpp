@@ -16,8 +16,8 @@
 
 namespace kogcoder{
 
-    std::vector<int>&& RandomArray::make( unsigned int size ) const {
-        std::vector<long long> v( size );
+    std::vector< int > RandomArray::make( unsigned int size ) const {
+        std::vector< int > v( size );
         //vectorに連続な値を設定
         iota( v.rbegin(), v.rend(), 1 );
 
@@ -26,7 +26,7 @@ namespace kogcoder{
         //ランダムに並び替え
         shuffle( v.begin(), v.end(), std::mt19937( rnd() ) );
 
-        return std::move( v );
+        return v;
     }
 
     int BubbleSort::next() {

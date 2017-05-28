@@ -19,7 +19,7 @@ namespace kogcoder{
 
     class RandomArray{
       public:
-        virtual std::vector<int>&& make(unsigned int) const;
+        virtual std::vector<int> make(unsigned int) const;
     };
 
     class BubbleSort{
@@ -28,7 +28,7 @@ namespace kogcoder{
         int next();
       private:
         std::vector<int>& vec;
-        int i,j;
+        unsigned int i,j;
     };
 
 }
