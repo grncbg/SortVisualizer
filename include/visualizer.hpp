@@ -9,3 +9,10 @@
 
     Auther : teapot <grncbg@gmail.com>
 */
+
+#ifndef INCLUDED_VISUALIZER_HPP
+#define INCLUDED_VISUALIZER_HPP
+
+
+
+#endif
