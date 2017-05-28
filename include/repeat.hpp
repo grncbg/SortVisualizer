@@ -13,6 +13,8 @@
 #ifndef INCLUDED_REPEAT_HPP
 #define INCLUDED_REPEAT_HPP
 
+#include <chrono>
+
 namespace kogcoder{
 
     /*
@@ -37,7 +39,11 @@ namespace kogcoder{
     */
     class Routine{
       public:
-        virtual int run() = 0;
+        virtual int run () = 0;
+    };
+
+    template < class T >
+    class Repeat{
     };
 
 }
