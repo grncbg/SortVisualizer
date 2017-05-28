@@ -48,9 +48,9 @@ namespace kogcoder{
         Repeat () noexcept = default;
         Repeat ( Repeat& ) = default;
         Repeat ( Repeat&& ) = default;
-        Repeat ( std::chrono::duration< T > &&interval ) : interval( interval ) {}
+        Repeat ( std::chrono::duration< T > &interval ) : interval( interval ) {}
         Repeat ( Routine *routine ) : routine( routine ) {}
-        Repeat ( Routine *routine, std::chrono::duration< T > &&interval ) : routine( routine ), interval( interval ){}
+        Repeat ( Routine *routine, std::chrono::duration< T > &interval ) : routine( routine ), interval( interval ){}
       private:
         Routine *routine;
         std::chrono::duration<T> interval;
