@@ -57,6 +57,8 @@ namespace kogcoder{
                             繰り返し実行するRoutineのポインタ
                         interval
                             繰り返す間隔
+            デストラクタ
+                virtual ~Repeat() noexcept = default
     */
     template < class T >
     class Repeat{
