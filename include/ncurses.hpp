@@ -24,16 +24,16 @@
 
 namespace kogcoder{
 
-    /*
+/*
         class Ncurses
             概要
                 ncursesの薄いラッパー
             コンストラクタ
-                Ncurses()
+                Ncurses() noexcept
                 Ncurses ( Ncurses& ) = delete
                 Ncurses ( Ncurses&& ) noexcept = default
             デストラクタ
-                ~Ncurses()
+                virtual ~Ncurses () noexcept
             関数
             public:
                 virtual int printw ( const char* format, Args const & ... args ) const noexcept
@@ -68,7 +68,7 @@ namespace kogcoder{
                         引数
                             なし
                         戻り値
-                            int : keypadがtrueに設定されているとき，キーコードを返す
+                            keypadがtrueに設定されているとき，キーコードを返す
 
                 virtual int clear ( void ) const noexcept
                     windowをクリアする
@@ -82,15 +82,26 @@ namespace kogcoder{
                         引数
                             なし
                         戻り値
-                            int : windowの横幅を返す
+                            windowの横幅を返す
 
                 virtual int getMaxHeight ( void ) const noexcept
                     windowの高さを返す
                         引数
                             なし
                         戻り値
-                            int : windowの高さを返す
+                            windowの高さを返す
 
+                virtual int hbar(const unsigned int len, const int color = WHITE_LINE) const noexcept
+                    横に指定した長さと色の棒を表示する
+                        引数
+                            len
+                                棒の長さ
+                            color
+                                棒の色
+                                    WHITE_LINE COLOR_PAIRS - 1
+                                    BLUE_LINE  COLOR_PAIRS - 2
+                                    RED_LINE   COLOR_PAIRS - 3
+                                として定義済み
 
             変数
             private:
@@ -103,41 +114,42 @@ namespace kogcoder{
                 int width
                     windowの横幅を持つ
     */
-    class Ncurses{
-      public:
-        Ncurses () noexcept;
-        Ncurses ( Ncurses& ) = delete;
-        Ncurses ( Ncurses&& ) noexcept = default;
-        virtual ~Ncurses () noexcept;
+class Ncurses
+{
+  public:
+    Ncurses() noexcept;
+    Ncurses(Ncurses &) = delete;
+    Ncurses(Ncurses &&) noexcept = default;
+    virtual ~Ncurses() noexcept;
 
-        template < class ... Args >
-        int printw ( const char*, Args const & ... ) const noexcept;
-        template < class ... Args >
-        int printw ( const std::string &, Args const & ... ) const noexcept;
+    template <class... Args>
+    int printw(const char *, Args const &...) const noexcept;
+    template <class... Args>
+    int printw(const std::string &, Args const &...) const noexcept;
 
-        template < class ... Args >
-        int mvprintw ( const int, const int, const char*, Args const & ...) const noexcept;
-        template < class ... Args >
-        int mvprintw ( const int, const int, const std::string, Args const & ...) const noexcept;
+    template <class... Args>
+    int mvprintw(const int, const int, const char *, Args const &...) const noexcept;
+    template <class... Args>
+    int mvprintw(const int, const int, const std::string, Args const &...) const noexcept;
 
-        virtual int refresh ( void ) const noexcept;
+    virtual int refresh(void) const noexcept;
 
-        virtual int getch ( void ) const noexcept;
+    virtual int getch(void) const noexcept;
 
-        virtual int clear ( void ) const noexcept;
+    virtual int clear(void) const noexcept;
 
-        virtual int getMaxWidth ( void ) const noexcept;
-        virtual int getMaxHeight ( void ) const noexcept;
+    virtual int getMaxWidth(void) const noexcept;
+    virtual int getMaxHeight(void) const noexcept;
 
-        virtual int hbar ( const unsigned int, const int = WHITE_LINE ) const noexcept;
+    virtual int hbar(const unsigned int, const int = WHITE_LINE) const noexcept;
 
-        virtual int move ( const int, const int ) const noexcept;
+    virtual int move(const int, const int) const noexcept;
 
-        virtual int nextLine( void ) const noexcept;
+    virtual int nextLine(void) const noexcept;
 
-      private:
-        WINDOW *window;
-        int hight, width;
+  private:
+    WINDOW *window;
+    int hight, width;
     };
 
 }
