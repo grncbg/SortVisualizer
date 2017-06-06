@@ -35,7 +35,7 @@ namespace kogcoder{
             デストラクタ
                 virtual ~Ncurses () noexcept
             関数
-            public:
+              public:
                 virtual int printw ( const char* format, Args const & ... args ) const noexcept
                 virtual int printw ( const std::string format, Args const & ... args ) const noexcept
                     printf形式で表示する
