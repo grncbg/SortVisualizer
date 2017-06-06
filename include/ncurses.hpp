@@ -111,7 +111,7 @@ namespace kogcoder{
                         戻り値
                             TODO : ncursesのhbarの戻り値を調べる
 
-                int move ( const int y, const int x ) const noexcept
+                virtual int move ( const int y, const int x ) const noexcept
                     カーソルを移動する
                         引数
                             y
@@ -120,6 +120,13 @@ namespace kogcoder{
                                 移動先のx座標
                         戻り値
                             TODO : ncursesのmoveの戻り値を調べる
+
+                virtual int nextLine( void ) const noexcept
+                    カーソルを次の行に移動する
+                        引数
+                            なし
+                        戻り値
+                            moveの戻り値
 
             変数
             private:
