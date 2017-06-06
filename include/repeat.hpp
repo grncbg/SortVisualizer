@@ -67,6 +67,8 @@ namespace kogcoder{
         Repeat(Routine *routine, std::chrono::duration<long long, T> &interval) noexcept : routine(routine), interval(interval) {}
         Repeat(Routine *routine, std::chrono::duration<long long, T> &&interval) noexcept : routine(routine), interval(interval) {}
 
+        virtual ~Repeat() noexcept = default;
+
         virtual void start( void ) const;
       private:
         Routine *routine;
