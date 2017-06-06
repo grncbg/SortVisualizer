@@ -36,8 +36,6 @@ namespace kogcoder{
                         戻り値
                             int : すべて終了したときfalseを返す
                                   それ以外の場合任意のtrueに相当する値を返して良い
-            変数
-               milliseconds> なし
     */
     class Routine{
       public:
