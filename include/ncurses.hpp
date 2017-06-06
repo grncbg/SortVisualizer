@@ -40,8 +40,10 @@ namespace kogcoder{
                 virtual int printw ( const std::string format, Args const & ... args ) const noexcept
                     printf形式で表示する
                         引数
-                            format : 出力するフォーマット(printfと同様)
-                            args   : 出力内容の引数(printfと同様)
+                            format
+                                出力するフォーマット(printfと同様)
+                            args
+                                出力内容の引数(printfと同様)
                         戻り値
                             TODO : ncursesのprintf関数の戻り値を調べる
 
@@ -49,10 +51,14 @@ namespace kogcoder{
                 virtual int mvprintw ( const int y, const int x, const std::string format, Args const & ... args ) const noexcept
                     移動したあとprintf形式で表示する
                         引数
-                            y : 移動先のy座標
-                            x : 移動先のx座標
-                            format : 出力するフォーマット(printfと同様)
-                            args   : 出力内容の引数(printfと同様)
+                            y
+                                移動先のy座標
+                            x
+                                移動先のx座標
+                            format
+                                出力するフォーマット(printfと同様)
+                            args
+                                出力内容の引数(printfと同様)
                         戻り値
                             TODO : ncursesのmvprintf関数の戻り値を調べる
 
@@ -102,6 +108,18 @@ namespace kogcoder{
                                     BLUE_LINE  COLOR_PAIRS - 2
                                     RED_LINE   COLOR_PAIRS - 3
                                 として定義済み
+                        戻り値
+                            TODO : ncursesのhbarの戻り値を調べる
+
+                int move ( const int y, const int x ) const noexcept
+                    カーソルを移動する
+                        引数
+                            y
+                                移動先のy座標
+                            x
+                                移動先のx座標
+                        戻り値
+                            TODO : ncursesのmoveの戻り値を調べる
 
             変数
             private:
