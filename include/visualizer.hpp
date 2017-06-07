@@ -97,10 +97,10 @@ namespace kogcoder{
         BubbleSortVisualizer(Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v) noexcept : Visualizer(ncurses), bs(bs), data(v){}
         ~BubbleSortVisualizer() noexcept = default;
 
+      private:
         virtual int setData() noexcept final override;
         virtual int draw() const noexcept final override;
 
-      private:
         BubbleSort &bs;
         std::vector<int> &data;
         std::pair<unsigned int, unsigned int> pickup;
