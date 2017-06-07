@@ -27,7 +27,8 @@ namespace kogcoder{
             width  = ncurses.getMaxWidth();
             curs_set(0);
         }
-        virtual ~Visualizer () noexcept = default;
+        virtual ~Visualizer() noexcept = default;
+
         virtual int run();
 
       private:
