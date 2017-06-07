@@ -52,6 +52,17 @@ namespace kogcoder{
                             ソートをするvector
             デストラクタ
                 virtual ~BubbleSort() noexcept = default
+            関数
+              private:
+                virtual int next( std::pair<unsigned int,unsigned int> &pickup) noexcept
+                    ソートを1段階すすめる
+                        引数
+                            pickup
+                                値を返すための引数
+                                firstに既にソートされた部分の最後の要素の添字を
+                                secondに入れ替えを行った要素の添字を入れる
+                        戻り値
+                            ソートが終了したら0を、それ以外のとき1を返す
     */
     class BubbleSort{
       public:
