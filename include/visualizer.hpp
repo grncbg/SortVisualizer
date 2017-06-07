@@ -20,7 +20,6 @@
 #include "repeat.hpp"
 
 namespace kogcoder{
-
     class Visualizer : public Routine{
       public:
         Visualizer ( Ncurses &ncurses ) noexcept : ncurses(ncurses){
@@ -29,10 +28,12 @@ namespace kogcoder{
             curs_set(0);
         }
         virtual ~Visualizer () noexcept = default;
-        virtual int run ();
+        virtual int run();
+
       private:
-        virtual int draw () const = 0;
+        virtual int draw() const = 0;
         virtual int setData() = 0;
+
       protected:
         Ncurses& ncurses;
         int height,width;
@@ -40,15 +41,15 @@ namespace kogcoder{
 
     class BubbleSortVisualizer : public Visualizer{
       public:
-        BubbleSortVisualizer ( Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v ) noexcept : Visualizer( ncurses ), bs( bs ), data( v ) {}
-        virtual int setData () noexcept override;
-        virtual int draw () const noexcept override;
+        BubbleSortVisualizer(Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v) noexcept : Visualizer(ncurses), bs(bs), data(v){}
+        virtual int setData() noexcept override;
+        virtual int draw() const noexcept override;
+
       private:
         BubbleSort &bs;
         std::vector< int > &data;
-        std::pair< unsigned int, unsigned int > pickup;
+        std::pair<unsigned int, unsigned int> pickup;
     };
-
 }
 
 #endif
