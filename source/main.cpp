@@ -44,9 +44,9 @@ int main( void ){
         //バブルソート
         BubbleSort bs(vec);
         //バブルソートのビジュアライザ
-        BubbleSortVisualizer *bsv = new BubbleSortVisualizer( ncurses, bs, vec );
+        BubbleSortVisualizer *bsv = new BubbleSortVisualizer(ncurses, bs, vec);
         //連続処理
-        Repeat<std::milli> r( bsv, 25ms );
+        Repeat<std::milli> r(bsv, 25ms);
 
         //処理の開始
         r.start();
