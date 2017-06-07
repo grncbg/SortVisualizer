@@ -52,14 +52,6 @@ namespace kogcoder{
                             ソートをするvector
             デストラクタ
                 virtual ~BubbleSort() noexcept = default
-            関数
-                virtual std::vector<int> make(unsigned int size) const
-                    1<=n<=sizeの値が一つずつ入ったランダムな並び順のvectorを返す
-                        引数
-                            size
-                                要素数
-                        戻り値
-                            1<=n<=sizeの値が一つずつ入ったランダムな並び順のvector
     */
     class BubbleSort{
       public:
