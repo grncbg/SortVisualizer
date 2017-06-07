@@ -30,7 +30,7 @@ namespace kogcoder{
         return v;
     }
 
-    int BubbleSort::next( std::pair<unsigned int,unsigned int> &pickup ) {
+    int BubbleSort::next( std::pair<unsigned int,unsigned int> &pickup ) noexcept {
         pickup.first  = i;
         pickup.second = j - 1;
 
