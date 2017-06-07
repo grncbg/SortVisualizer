@@ -20,6 +20,17 @@
 #include "sort.hpp"
 
 namespace kogcoder{
+    /*
+        class Visualizer : public Routine
+            概要
+                ビジュライザの基底クラス
+            コンストラクタ
+                Visualizer ( Ncurses &ncurses ) noexcept
+                    引数
+                        Ncursesのインスタンス
+            デストラクタ
+                virtual ~Visualizer() noexcept = default
+    */
     class Visualizer : public Routine{
       public:
         Visualizer ( Ncurses &ncurses ) noexcept : ncurses(ncurses){
