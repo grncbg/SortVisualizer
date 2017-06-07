@@ -20,6 +20,9 @@ namespace kogcoder{
         class RandomArray
             概要
                 ランダムな配列を作る
+            コンストラクタ
+                RandomArray() noexcept = default
+
     */
     class RandomArray {
       public:
