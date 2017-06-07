@@ -40,7 +40,7 @@ namespace kogcoder{
         }
         virtual ~Visualizer() noexcept = default;
 
-        virtual int run();
+        int run() final override;
 
       private:
         virtual int draw() const = 0;
