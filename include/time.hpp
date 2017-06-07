@@ -19,8 +19,11 @@ namespace kogcoder{
 
     class Time{
       public:
-        template < class T >
-        void wait(const std::chrono::duration< long long, T > &) const;
+        Time() noexcept = default;
+        virtual ~Time() noexcept = default;
+
+        template <class T>
+        void wait(const std::chrono::duration<long long, T> &) const;
         template < class T >
         void wait(const std::chrono::duration< long long, T > &&) const;
     };
