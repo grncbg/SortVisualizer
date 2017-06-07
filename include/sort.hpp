@@ -27,6 +27,7 @@ namespace kogcoder{
     class RandomArray {
       public:
         RandomArray() noexcept = default;
+        virtual ~RandomArray() noexcept = default;
 
         virtual std::vector<int> make(unsigned int) const;
     };
