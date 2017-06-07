@@ -37,8 +37,24 @@ namespace kogcoder{
               private:
                 virtual int draw() const = 0
                     描画用の純粋仮想関数
+                        引数
+                            なし
+                        戻り値
+                            常にtrue
                 virtual int setData() = 0
                     次の状態へすすめる純粋仮想関数
+                        引数
+                            なし
+                        戻り値
+                            next関数の戻り値
+            変数
+              protected:
+                Ncurses& ncurses
+                    Ncursesのインスタンス
+                int height
+                    画面の高さ
+                int width
+                    画面の横幅
     */
     class Visualizer : public Routine{
       public:
