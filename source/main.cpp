@@ -9,15 +9,15 @@
     Auther : teapot <grncbg@gmail.com>
 */
 
-#include <iostream>
 #include <chrono>
+#include <iostream>
 
 #include <ncurses.h>
 
 #include "ncurses.hpp"
 #include "repeat.hpp"
-#include "time.hpp"
 #include "sort.hpp"
+#include "time.hpp"
 #include "visualizer.hpp"
 
 using namespace kogcoder;

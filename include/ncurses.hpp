@@ -14,6 +14,7 @@
 #define INCLUDED_NCURSES_HPP
 
 #include <string>
+
 #include <ncurses.h>
 
 #undef getch
