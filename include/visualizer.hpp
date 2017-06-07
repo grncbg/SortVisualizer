@@ -30,6 +30,10 @@ namespace kogcoder{
                         Ncursesのインスタンス
             デストラクタ
                 virtual ~Visualizer() noexcept = default
+            関数
+              public:
+                int run() final override
+                    繰り返す処理
     */
     class Visualizer : public Routine{
       public:
