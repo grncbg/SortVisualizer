@@ -39,14 +39,10 @@ namespace kogcoder{
                     描画用の純粋仮想関数
                         引数
                             なし
-                        戻り値
-                            常にtrue
                 virtual int setData() = 0
                     次の状態へすすめる純粋仮想関数
                         引数
                             なし
-                        戻り値
-                            next関数の戻り値
             変数
               protected:
                 Ncurses& ncurses
@@ -65,7 +61,7 @@ namespace kogcoder{
         }
         virtual ~Visualizer() noexcept = default;
 
-        int run() final override;
+        virtual int run() final override;
 
       private:
         virtual int draw() const = 0;
@@ -91,6 +87,20 @@ namespace kogcoder{
                             ソートするvector
             デストラクタ
                 ~BubbleSortVisualizer() noexcept = default
+            関数
+              private:
+                virtual int setData() noexcept final override
+                    描画関数
+                        引数
+                            なし
+                        戻り値
+                            常にtrue
+                virtual int draw() const noexcept final override
+                    次の状態へすすめる関数
+                        引数
+                            なし
+                        戻り値
+                            next関数の戻り値
     */
     class BubbleSortVisualizer : public Visualizer{
       public:
