@@ -63,6 +63,14 @@ namespace kogcoder{
                                 secondに入れ替えを行った要素の添字を入れる
                         戻り値
                             ソートが終了したら0を、それ以外のとき1を返す
+            変数
+              private:
+                std::vector<int>& vec
+                    現在状態の配列を保持する
+                unsigned int i
+                    ソートが終了済みの領域の最後の要素の添字
+                unsigned int j
+                    現在比較している要素の添字
     */
     class BubbleSort{
       public:
