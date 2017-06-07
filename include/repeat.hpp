@@ -43,9 +43,12 @@ namespace kogcoder{
     };
 
     /*
+        template < class T >
         class Repeat
             概要
                 指定時間ごとにRoutineを繰り返し実行する
+            テンプレート
+                実行する間隔を指定するinterval変数の指数
             コンストラクタ
                 Repeat () = delete;
                 Repeat ( Repeat& ) = default;
@@ -59,6 +62,22 @@ namespace kogcoder{
                             繰り返す間隔
             デストラクタ
                 virtual ~Repeat() noexcept = default
+            関数
+              public:
+                virtual void start( void ) const
+                    連続実行を開始する
+                        引数
+                            なし
+                        戻り値
+                            なし
+            変数
+              private:
+                Routine *routine;
+                    繰り返し実行するRoutineのポインタ
+                Time time;
+                    timeクラスのインスタンス
+                std::chrono::duration< long long, T > interval;
+                    実行する間隔
     */
     template < class T >
     class Repeat{
