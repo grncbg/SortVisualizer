@@ -89,6 +89,8 @@ namespace kogcoder{
                             BubbleSortのインスタンス
                         v
                             ソートするvector
+            デストラクタ
+                ~BubbleSortVisualizer() noexcept = default
     */
     class BubbleSortVisualizer : public Visualizer{
       public:
