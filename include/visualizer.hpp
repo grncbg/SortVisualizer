@@ -76,6 +76,11 @@ namespace kogcoder{
         int height,width;
     };
 
+    /*
+        class BubbleSortVisualizer : public Visualizer
+            概要
+                バブルソートのビジュアライザ
+    */
     class BubbleSortVisualizer : public Visualizer{
       public:
         BubbleSortVisualizer(Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v) noexcept : Visualizer(ncurses), bs(bs), data(v){}
