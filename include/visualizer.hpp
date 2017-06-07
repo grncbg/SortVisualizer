@@ -80,6 +80,15 @@ namespace kogcoder{
         class BubbleSortVisualizer : public Visualizer
             概要
                 バブルソートのビジュアライザ
+            コンストラクタ
+                BubbleSortVisualizer(Ncurses &ncurses, BubbleSort &bs, std::vector<int> &v) noexcept
+                    引数
+                        ncurses
+                            Ncursesのインスタンス
+                        bs
+                            BubbleSortのインスタンス
+                        v
+                            ソートするvector
     */
     class BubbleSortVisualizer : public Visualizer{
       public:
@@ -89,7 +98,7 @@ namespace kogcoder{
 
       private:
         BubbleSort &bs;
-        std::vector< int > &data;
+        std::vector<int> &data;
         std::pair<unsigned int, unsigned int> pickup;
     };
 }
