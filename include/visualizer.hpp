@@ -16,8 +16,8 @@
 #include <vector>
 
 #include "ncurses.hpp"
-#include "sort.hpp"
 #include "repeat.hpp"
+#include "sort.hpp"
 
 namespace kogcoder{
     class Visualizer : public Routine{
