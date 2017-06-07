@@ -32,13 +32,13 @@ namespace kogcoder{
         virtual ~Time() noexcept = default;
 
         template <class T>
-        void wait(const std::chrono::duration<long long, T> &) const;
+        void wait(const std::chrono::duration<long long, T> &) const noexcept;
         template < class T >
-        void wait(const std::chrono::duration< long long, T > &&) const;
+        void wait(const std::chrono::duration< long long, T > &&) const noexcept;
     };
 
     template < class T >
-    void Time::wait(const std::chrono::duration< long long, T > &time) const {
+    void Time::wait(const std::chrono::duration< long long, T > &time) const noexcept {
         std::chrono::steady_clock::time_point s,e;
         s = std::chrono::steady_clock::now();
         e = std::chrono::steady_clock::now();
@@ -47,7 +47,7 @@ namespace kogcoder{
     }
 
     template < class T >
-    void Time::wait(const std::chrono::duration< long long, T > &&time) const {
+    void Time::wait(const std::chrono::duration< long long, T > &&time) const noexcept {
         wait(time);
     }
 
