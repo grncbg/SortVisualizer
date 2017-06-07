@@ -17,6 +17,15 @@
 
 namespace kogcoder{
 
+    /*
+        class Time
+            概要
+                指定時間待機する
+            コンストラクタ
+                Time() noexcept = default
+            デストラクタ
+                virtual ~Time() noexcept = default
+    */
     class Time{
       public:
         Time() noexcept = default;
