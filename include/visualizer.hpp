@@ -101,6 +101,15 @@ namespace kogcoder{
                             なし
                         戻り値
                             next関数の戻り値
+            変数
+              private:
+                BubbleSort &bs
+                    BubbleSortのインスタンス
+                std::vector<int> &data
+                    ソートするデータ
+                std::pair<unsigned int, unsigned int> pickup
+                    firstに既にソートされた部分の最後の要素の添字を
+                    secondに入れ替えを行った要素の添字が入る
     */
     class BubbleSortVisualizer : public Visualizer{
       public:
