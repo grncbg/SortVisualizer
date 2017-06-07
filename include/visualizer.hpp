@@ -34,6 +34,9 @@ namespace kogcoder{
               public:
                 int run() final override
                     繰り返す処理
+              private:
+                virtual int draw() const = 0
+                    描画用の純粋仮想関数
     */
     class Visualizer : public Routine{
       public:
