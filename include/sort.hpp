@@ -16,9 +16,12 @@
 #include <vector>
 
 namespace kogcoder{
-
-    //ランダムな並びの並列を作る
-    class RandomArray{
+    /*
+        class RandomArray
+            概要
+                ランダムな配列を作る
+    */
+    class RandomArray {
       public:
         virtual std::vector<int> make(unsigned int) const;
     };
