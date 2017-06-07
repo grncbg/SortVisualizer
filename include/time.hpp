@@ -36,11 +36,7 @@ namespace kogcoder{
 
     template < class T >
     void Time::wait(const std::chrono::duration< long long, T > &&time) const {
-        std::chrono::steady_clock::time_point s,e;
-        s = std::chrono::steady_clock::now();
-        e = std::chrono::steady_clock::now();
-        while( e - s < time )
-            e = std::chrono::steady_clock::now();
+        wait(time);
     }
 
 }
