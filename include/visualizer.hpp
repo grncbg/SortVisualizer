@@ -37,6 +37,8 @@ namespace kogcoder{
               private:
                 virtual int draw() const = 0
                     描画用の純粋仮想関数
+                virtual int setData() = 0
+                    次の状態へすすめる純粋仮想関数
     */
     class Visualizer : public Routine{
       public:
