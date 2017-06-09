@@ -10,6 +10,7 @@
 */
 
 #include <chrono>
+#include <iostream>
 
 #include "ncurses.hpp"
 #include "repeat.hpp"
@@ -24,7 +25,7 @@ using namespace std::literals::chrono_literals;
 
 // main関数
 int main(void){
-
+    /*
     Ncurses ncurses;
     int height = ncurses.getMaxHeight();
     RandomArray gen;
@@ -44,6 +45,24 @@ int main(void){
         r.start();
 
         //wait
+        time.wait<std::milli>(1000ms);
+    }
+    */
+    Ncurses ncurses;
+    RandomArray gen;
+    Time time;
+
+    int height = ncurses.getMaxHeight();
+
+    while(true){
+        vector<int> vec = gen.make(height);
+        ShakerSort ss(vec);
+        ShakerSortVisualizer ssv(ncurses, ss, vec);
+
+        Repeat<std::milli> r(&ssv, 50ms);
+
+        r.start();
+
         time.wait<std::milli>(1000ms);
     }
 

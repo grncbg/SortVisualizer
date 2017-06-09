@@ -45,4 +45,24 @@ namespace kogcoder{
         return true;
     }
 
+    int ShakerSortVisualizer::setData() noexcept {
+        return ss.next( pickup );
+    }
+
+    int ShakerSortVisualizer::draw() const noexcept {
+        for( unsigned int i = 0; i < data.size(); i++,ncurses.nextLine() ){
+            //ソート済み
+            if( i < pickup.first.first || i > pickup.first.second )
+                ncurses.hbar( data[i], BLUE_LINE );
+            //変更
+            else if( i == pickup.second || i == pickup.second + 1 )
+                ncurses.hbar( data[i], RED_LINE );
+            //それ以外
+            else
+                ncurses.hbar( data[i] );
+        }
+        return true;
+    }
+
+
 }

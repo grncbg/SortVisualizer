@@ -124,6 +124,20 @@ namespace kogcoder{
         std::vector<int> &data;
         std::pair<unsigned int, unsigned int> pickup;
     };
+
+    class ShakerSortVisualizer : public Visualizer{
+      public:
+        ShakerSortVisualizer(Ncurses &ncurses, ShakerSort &ss, std::vector<int> &v) noexcept : Visualizer(ncurses), ss(ss), data(v){}
+        ~ShakerSortVisualizer() noexcept = default;
+
+      private:
+        virtual int setData() noexcept final override;
+        virtual int draw() const noexcept final override;
+
+        ShakerSort &ss;
+        std::vector<int> &data;
+        std::pair<std::pair<unsigned int, unsigned int>, unsigned int> pickup;
+    };
 }
 
 #endif

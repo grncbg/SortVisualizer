@@ -74,7 +74,7 @@ namespace kogcoder{
     */
     class BubbleSort{
       public:
-        BubbleSort ( std::vector<int> &vec ) : vec(vec), i(0), j(vec.size() - 1) {}
+        BubbleSort(std::vector<int> &vec) : vec(vec), i(0), j(vec.size() - 1){}
         virtual ~BubbleSort() noexcept = default;
 
         virtual int next( std::pair<unsigned int,unsigned int> & ) noexcept;
@@ -83,6 +83,18 @@ namespace kogcoder{
         unsigned int i,j;
     };
 
+    class ShakerSort{
+      public:
+        ShakerSort(std::vector<int> &vec) : vec(vec), top(0), bot(vec.size() - 1), j(vec.size() - 1), last_swap_index(0), flag(true){}
+        virtual ~ShakerSort() noexcept = default;
+
+        virtual int next(std::pair<std::pair<unsigned int, unsigned int>, unsigned int> &) noexcept;
+
+      private:
+        std::vector<int>& vec;
+        unsigned int top, bot, j, last_swap_index;
+        bool flag;
+    };
 }
 
 #endif

@@ -52,4 +52,51 @@ namespace kogcoder{
 		return 1;
     }
 
+
+    int ShakerSort::next( std::pair<std::pair<unsigned int, unsigned int>, unsigned int> &pickup ) noexcept {
+        pickup.first.first  = top;
+        pickup.first.second = bot;
+        pickup.second = j - 1;
+
+        //終了したら0を返す
+		if (top == bot){
+            pickup.first.first = vec.size();
+            pickup.first.second = vec.size();
+            return 0;
+        }
+
+        if(flag){
+
+            //右が小さかったら入れ替え
+            if(vec[j] < vec[j-1]){
+                std::swap( vec[j], vec[j - 1] );
+                last_swap_index = j;
+            }
+
+            j--;
+
+            if(top == j){
+                top = last_swap_index;
+                j = top;
+                flag = false;
+            }
+        }else{
+
+            //右が小さかったら入れ替え
+            if(vec[j] > vec[j+1]){
+                std::swap(vec[j], vec[j + 1]);
+                last_swap_index = j;
+            }
+
+            j++;
+
+            if(bot == j){
+                bot = last_swap_index;
+                j = bot;
+                flag = true;
+            }
+        }
+		return 1;
+    }
+
 }
