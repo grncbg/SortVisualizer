@@ -10,9 +10,6 @@
 */
 
 #include <chrono>
-#include <iostream>
-
-#include <ncurses.h>
 
 #include "ncurses.hpp"
 #include "repeat.hpp"
@@ -26,17 +23,12 @@ using namespace std::chrono;
 using namespace std::literals::chrono_literals;
 
 // main関数
-int main( void ){
-    //ncursesのラッパー
+int main(void){
+
     Ncurses ncurses;
-
-    //ランダムな配列のジェネレーター
-    RandomArray gen;
-    //時間処理のクラス(waitのみ)
-    Time time;
-
-    //端末の高さを取得
     int height = ncurses.getMaxHeight();
+    RandomArray gen;
+    Time time;
 
     while(true){
         //ランダムな配列を作成
@@ -44,14 +36,12 @@ int main( void ){
         //バブルソート
         BubbleSort bs(vec);
         //バブルソートのビジュアライザ
-        BubbleSortVisualizer *bsv = new BubbleSortVisualizer(ncurses, bs, vec);
+        BubbleSortVisualizer bsv(ncurses, bs, vec);
         //連続処理
-        Repeat<std::milli> r(bsv, 25ms);
+        Repeat<std::milli> r(&bsv, 25ms);
 
         //処理の開始
         r.start();
-
-        delete bsv;
 
         //wait
         time.wait<std::milli>(1000ms);
