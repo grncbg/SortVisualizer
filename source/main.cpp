@@ -25,45 +25,44 @@ using namespace std::literals::chrono_literals;
 
 // main関数
 int main(void){
-    /*
+
     Ncurses ncurses;
-    int height = ncurses.getMaxHeight();
     RandomArray gen;
     Time time;
+    int height = ncurses.getMaxHeight();
+
+    const int type = 2;
+
+    int count = 0;
 
     while(true){
         //ランダムな配列を作成
         vector<int> vec = gen.make(height);
-        //バブルソート
-        BubbleSort bs(vec);
-        //バブルソートのビジュアライザ
-        BubbleSortVisualizer bsv(ncurses, bs, vec);
-        //連続処理
-        Repeat<std::milli> r(&bsv, 25ms);
 
-        //処理の開始
-        r.start();
+        switch(count){
+          case 0:
+            {
+                BubbleSort bs(vec);
+                BubbleSortVisualizer bsv(ncurses, bs, vec);
+                Repeat<std::milli> r(&bsv, 10ms);
+                r.start();
+            }
+            break;
+          case 1:
+            {
+                ShakerSort ss(vec);
+                ShakerSortVisualizer ssv(ncurses, ss, vec);
+                Repeat<std::milli> r(&ssv, 10ms);
+                r.start();
+            }
+            break;
+        }
 
         //wait
         time.wait<std::milli>(1000ms);
-    }
-    */
-    Ncurses ncurses;
-    RandomArray gen;
-    Time time;
 
-    int height = ncurses.getMaxHeight();
+        count = (count + 1) % type;
 
-    while(true){
-        vector<int> vec = gen.make(height);
-        ShakerSort ss(vec);
-        ShakerSortVisualizer ssv(ncurses, ss, vec);
-
-        Repeat<std::milli> r(&ssv, 50ms);
-
-        r.start();
-
-        time.wait<std::milli>(1000ms);
     }
 
     return 0;
