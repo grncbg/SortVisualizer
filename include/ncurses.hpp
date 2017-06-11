@@ -175,6 +175,7 @@ namespace kogcoder{
       private:
         WINDOW *window;
         int hight, width;
+        int x_default;
     };
 
 }

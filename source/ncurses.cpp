@@ -18,6 +18,7 @@ namespace kogcoder{
         window = initscr();
 		start_color();
         getmaxyx( window, hight, width );
+		x_default = (width - hight)/2;
         init_pair( COLOR_PAIRS - 1, COLOR_BLACK, COLOR_WHITE );
         init_pair( COLOR_PAIRS - 2, COLOR_BLACK, COLOR_BLUE );
         init_pair( COLOR_PAIRS - 3, COLOR_BLACK, COLOR_RED );
@@ -36,7 +37,9 @@ namespace kogcoder{
     }
 
     int Ncurses::clear ( void ) const noexcept {
-        return ::clear();
+        int let = ::clear();
+		move(0,x_default);
+		return let;
     }
 
     int Ncurses::getMaxWidth ( void ) const noexcept {
@@ -61,7 +64,7 @@ namespace kogcoder{
     int Ncurses::nextLine( void ) const noexcept {
         int y, x;
         getyx( window, y, x );
-        return move( ++y, 0 );
+        return move( ++y, x_default );
     }
 
 }
